@@ -23,7 +23,7 @@ HR{
 	margin: 7px 0 7px 0;
 }
 a{
-	color: #07449f;
+	color: #004400;
 	}
 fieldset {border: none;padding: 2px;}
 fieldset input {margin: 2px;}
@@ -43,11 +43,12 @@ DIV.identification {
 DIV.identification H1 {
     margin-top: 10px;
 	font-size: 160%;
-	color: rgb(40,72,125);
+	color: #004400;
 }
 DIV.identification H2{
     font-size: 130%;
     color: rgb(40,72,125);    
+    display: none;
 }
 DIV.identification H3{
     /*font-size: 130%;
@@ -93,7 +94,7 @@ DIV.search DIV.informationTypes SPAN {
 	text-decoration: underline;
 }
 DIV.search DIV.searchForm {
-	background: #d9e2e8;
+	background: #dbe9dc;
 }
 DIV.search DIV.searchForm SELECT.inputText {
 	font-size: 100%;
@@ -102,10 +103,10 @@ DIV.search DIV.searchForm SELECT.inputText {
 }
 
 .submit {
-	background: #d9e8f2;
-	border: 1px solid #c2d5e1;
-	border-bottom-color: #7899AF;
-	border-right-color: #7899AF;
+	background: #dbf3dc;
+	border: 1px solid #c2e1c4;
+	border-bottom-color: #79b07c;
+	border-right-color: #79b07c;
 	color: #121212;
 	padding: 2px 8px 2px 8px;
 	font-weight: bold;
@@ -221,7 +222,7 @@ DIV.resultsBar DIV.orderBy {
 	color: #7f7f7f;
 }
 DIV.results DIV.resultServices, .affix {
-	background: #f4f6f8;
+	background: #f3f8f3;
 }
 DIV.results DIV.resultServices DIV DIV {
 	border: 0px;
@@ -323,10 +324,10 @@ DIV.resultServices DIV.mailSend FORM.disabled DIV{
 	color: #AAAAAA;
 }
 DIV.resultSet DIV.infoBar {
-	background: #ecf0f3;
+	background: #DBE9DC;
 }
 DIV.resultSet DIV.infoBar DIV.pagination A {
-	color: #00f;
+	color: #069F15;
 }
 DIV.resultSet DIV.record {
 	border-bottom: 1px solid #e5e5e5;
