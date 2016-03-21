@@ -32,6 +32,7 @@ fieldset input {margin: 2px;}
     max-width: 1004px;
     min-width: 780px;
     position: relative;
+ background: url(../image/pt/banner-pmm-iahx.png) top no-repeat;
 	}
 DIV.identification H2 {
 	font-weight: normal;
@@ -39,7 +40,9 @@ DIV.identification H2 {
 }
 DIV.identification {
     float: left;
+display:none;
 }
+.parent{display:none;}
 DIV.identification H1 {
     margin-top: 10px;
 	font-size: 160%;
