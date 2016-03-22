@@ -76,16 +76,108 @@
 			    {% if doc.au is defined %}
 			    
 			        {% for author in doc.au %}
-			            <a href='{{ constant("SEARCH_URL") }}?lang={{ lang }}&q=au:"{{ author }}"'>{{ author }}</a>{% if loop.last %}.{% else %};{% endif %}
+                        {% if author|trim == true %}
+                            <a href='{{ constant("SEARCH_URL") }}?lang={{ lang }}&q=au:"{{ author|trim }}"'>{{ author|trim }}</a>{% if loop.last %}.{% else %};{% endif %}
+                        {% endif %}
 			        {% endfor %}
 
 			    {% endif %}	            
 
 				{% include custom_template("result-inc-source.html") %}
 
+                {% if doc.db.0 == 'pesq_pmm' %}
+                    <div style="margin: 10px 0;">
+                        {% if doc.link_curriculo_lattes.0|raw|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.link_curriculo_lattes }}:</strong> <a href="{{ doc.link_curriculo_lattes.0|raw|trim }}" target="_blank" alt="{{ texts.PMM_LABELS.link_curriculo_lattes }} Link">{{ doc.link_curriculo_lattes.0|raw|trim }}</a>
+                            </div>
+                        {% endif %}
+                        {% if doc.instituicao_sede_da_pesquisa_faculdade.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_faculdade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_faculdade.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.resumo.0|raw|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.resumo }}:</strong> {{ doc.resumo.0|raw|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.objetivo_da_pesquisa.0|raw|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.objetivo_da_pesquisa }}:</strong> {{ doc.objetivo_da_pesquisa.0|raw|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.tipo_de_pesquisa.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa }}:</strong> {{ doc.tipo_de_pesquisa.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.abrangencia.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.abrangencia }}:</strong> {{ doc.abrangencia.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.instituicao_sede_da_pesquisa_cidade.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_cidade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_cidade.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.instituicao_sede_da_pesquisa_estado.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_estado }}:</strong> {{ doc.instituicao_sede_da_pesquisa_estado.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.instituicao_sede_da_pesquisa_pais.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_pais }}:</strong> {{ doc.instituicao_sede_da_pesquisa_pais.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.tese.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.tese }}:</strong> {{ doc.tese.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.data_de_inicio.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.data_de_inicio }}:</strong> {{ doc.data_de_inicio.0|trim|date("d/m/Y") }}
+                            </div>
+                        {% endif %}
+                        {% if doc.data_provavel_de_finalizacao.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.data_provavel_de_finalizacao }}:</strong> {{ doc.data_provavel_de_finalizacao.0|trim|date("d/m/Y") }}
+                            </div>
+                        {% endif %}
+                        {% if doc.data_de_finalizacao.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.data_de_finalizacao }}:</strong> {{ doc.data_de_finalizacao.0|trim|date("d/m/Y") }}
+                            </div>
+                        {% endif %}
+                        {% if doc.equipe_de_pesquisa.0|raw|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.equipe_de_pesquisa }}:</strong> {{ doc.equipe_de_pesquisa.0|raw|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.fonte_de_financiamento.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.fonte_de_financiamento }}:</strong> {{ doc.fonte_de_financiamento.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.taxonomia_pmm.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.taxonomia_pmm }}:</strong> {{ doc.taxonomia_pmm.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.referencias_bibliograficas_das_publicacoes_relacionadas_a_pesquisa.0|raw|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.referencias_bibliograficas_das_publicacoes_relacionadas_a_pesquisa }}:</strong> {{ doc.referencias_bibliograficas_das_publicacoes_relacionadas_a_pesquisa.0|raw|trim }}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
 			    {% if doc.ab is defined %}
 			        <div>
-			            <h4>{{ texts.RESULT.LABEL_ABSTRACT }}</h4>
+			            <!--h4>{{ texts.RESULT.LABEL_ABSTRACT }}</h4-->
 			            {% for abstract in doc.ab %}
 			                {{ abstract|raw }}{% if loop.last %}{% else %}<hr/>{% endif %}
 			            {% endfor %}
