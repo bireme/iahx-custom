@@ -23,7 +23,7 @@ HR{
 	margin: 7px 0 7px 0;
 }
 a{
-	color: #07449f;
+	color: #50936e;
 	}
 fieldset {border: none;padding: 2px;}
 fieldset input {margin: 2px;}
@@ -32,6 +32,7 @@ fieldset input {margin: 2px;}
     max-width: 1004px;
     min-width: 780px;
     position: relative;
+	
 	}
 DIV.identification H2 {
 	font-weight: normal;
@@ -43,11 +44,11 @@ DIV.identification {
 DIV.identification H1 {
     margin-top: 10px;
 	font-size: 160%;
-	color: rgb(40,72,125);
+	color: #50936e;
 }
 DIV.identification H2{
     font-size: 130%;
-    color: rgb(40,72,125);    
+    color: #50936e;    
 }
 DIV.identification H3{
     /*font-size: 130%;
@@ -93,7 +94,7 @@ DIV.search DIV.informationTypes SPAN {
 	text-decoration: underline;
 }
 DIV.search DIV.searchForm {
-	background: #d9e2e8;
+	background: #e7f7ee;
 }
 DIV.search DIV.searchForm SELECT.inputText {
 	font-size: 100%;
@@ -149,7 +150,7 @@ DIV.search DIV.searchForm A {
 	color: #121212;
 }
 DIV.content {
-	border-top: 1px solid #71a1b4;
+	border-top: 1px solid #50936e;
 }
 DIV.resultsBar DIV.print a {
 	background: #d9e8f2 url(../image/common/print.gif) 4px 4px no-repeat;
@@ -323,7 +324,7 @@ DIV.resultServices DIV.mailSend FORM.disabled DIV{
 	color: #AAAAAA;
 }
 DIV.resultSet DIV.infoBar {
-	background: #ecf0f3;
+	background: #e7f7ee;
 }
 DIV.resultSet DIV.infoBar DIV.pagination A {
 	color: #00f;
