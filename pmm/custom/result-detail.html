@@ -3,7 +3,6 @@
 
 {% block extrahead %}
     <link rel="stylesheet" rev="stylesheet" href="{{ constant("STATIC_URL") }}css/print.css" type="text/static" media="print">  
-    <script>window.print();</script> 
 
     <meta name="citation_id" content="{{ doc.id }}" />
     <meta name="dc.identifier" content="{{ doc.id }}" />
@@ -92,11 +91,38 @@
                                 <strong>{{ texts.PMM_LABELS.link_curriculo_lattes }}:</strong> <a href="{{ doc.link_curriculo_lattes.0|raw|trim }}" target="_blank" alt="{{ texts.PMM_LABELS.link_curriculo_lattes }} Link">{{ doc.link_curriculo_lattes.0|raw|trim }}</a>
                             </div>
                         {% endif %}
-                        {% if doc.instituicao_sede_da_pesquisa_faculdade.0|trim == true %}
+
+                        <!-- Campo: Instituição Sede da Pesquisa -->
+                        {% if doc.instituicao_sede_da_pesquisa.0|trim == true %}
                             <div>
-                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_faculdade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_faculdade.0|trim }}
+                                <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa }}:</strong> {{ doc.instituicao_sede_da_pesquisa.0|trim|split('|').1 }}
                             </div>
+                            {% if doc.instituicao_sede_da_pesquisa.0|trim|split('|').0 == 'universitaria' %}
+                                {% if doc.instituicao_sede_da_pesquisa_universidade.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_universidade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_universidade.0|trim }}
+                                    </div>
+                                {% endif %}
+                                {% if doc.instituicao_sede_da_pesquisa_faculdade.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_faculdade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_faculdade.0|trim }}
+                                    </div>
+                                {% endif %}
+                                {% if doc.instituicao_sede_da_pesquisa_departamento.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_departamento }}:</strong> {{ doc.instituicao_sede_da_pesquisa_departamento.0|trim }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if doc.instituicao_sede_da_pesquisa.0|trim|split('|').0 == 'nao_universitaria' %}
+                                {% if doc.nome_da_instituicao_sede_da_pesquisa.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.nome_da_instituicao_sede_da_pesquisa }}:</strong> {{ doc.nome_da_instituicao_sede_da_pesquisa.0|trim }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
                         {% endif %}
+
                         {% if doc.resumo.0|raw|trim == true %}
                             <div>
                                 <strong>{{ texts.PMM_LABELS.resumo }}:</strong> {{ doc.resumo.0|raw|trim }}
@@ -107,14 +133,57 @@
                                 <strong>{{ texts.PMM_LABELS.objetivo_da_pesquisa }}:</strong> {{ doc.objetivo_da_pesquisa.0|raw|trim }}
                             </div>
                         {% endif %}
+
+                        <!-- Campo: Tipo de Pesquisa -->
                         {% if doc.tipo_de_pesquisa.0|trim == true %}
                             <div>
                                 <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa }}:</strong> {{ doc.tipo_de_pesquisa.0|trim }}
                             </div>
+                            {% if doc.tipo_de_pesquisa.0|trim == 'Observacional' %}
+                                {% if doc.tipo_de_pesquisa_observacional.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa_observacional }}:</strong> {{ doc.tipo_de_pesquisa_observacional.0|trim|split('|').1 }}
+                                    </div>
+                                    {% if doc.tipo_de_pesquisa_observacional.0|trim|split('|').0 == 'analitica' %}
+                                        {% if doc.tipo_de_pesquisa_analitica.0|trim == true %}
+                                            <div>
+                                                <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa_analitica }}:</strong> {{ doc.tipo_de_pesquisa_analitica.0|trim }}
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                            {% if doc.tipo_de_pesquisa.0|trim == 'Experimental' %}
+                                {% if doc.tipo_de_pesquisa_experimental.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa_experimental }}:</strong> {{ doc.tipo_de_pesquisa_experimental.0|trim }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if doc.tipo_de_pesquisa.0|trim == 'Estudos especiais' %}
+                                {% if doc.tipo_de_pesquisa_estudos_especiais.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa_estudos_especiais }}:</strong> {{ doc.tipo_de_pesquisa_estudos_especiais.0|trim }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                            {% if doc.tipo_de_pesquisa.0|trim == 'Outro' %}
+                                {% if doc.tipo_de_pesquisa_outro.0|trim == true %}
+                                    <div>
+                                        <strong>{{ texts.PMM_LABELS.tipo_de_pesquisa_outro }}:</strong> {{ doc.tipo_de_pesquisa_outro.0|trim }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
                         {% endif %}
+
                         {% if doc.abrangencia.0|trim == true %}
                             <div>
                                 <strong>{{ texts.PMM_LABELS.abrangencia }}:</strong> {{ doc.abrangencia.0|trim }}
+                            </div>
+                        {% endif %}
+                        {% if doc.regiao_onde_a_pesquisa_foi_realizada.0|trim == true %}
+                            <div>
+                                <strong>{{ texts.PMM_LABELS.regiao_onde_a_pesquisa_foi_realizada }}:</strong> {{ doc.regiao_onde_a_pesquisa_foi_realizada.0|trim }}
                             </div>
                         {% endif %}
                         {% if doc.instituicao_sede_da_pesquisa_cidade.0|trim == true %}
@@ -132,11 +201,21 @@
                                 <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_pais }}:</strong> {{ doc.instituicao_sede_da_pesquisa_pais.0|trim }}
                             </div>
                         {% endif %}
-                        {% if doc.tese.0|trim == true %}
-                            <div>
-                                <strong>{{ texts.PMM_LABELS.tese }}:</strong> {{ doc.tese.0|trim }}
-                            </div>
+
+                        <!-- Campo: Tese -->
+                        {% if doc.forma_parte_de_alguma_tese.0|trim == 'Sim' %}
+                            {% if doc.tese.0|trim == true %}
+                                <div>
+                                    <strong>{{ texts.PMM_LABELS.tese }}:</strong> {{ doc.tese.0|trim }}
+                                </div>
+                            {% endif %}
+                            {% if doc.nome_do_orientador_da_tese.0|trim == true %}
+                                <div>
+                                    <strong>{{ texts.PMM_LABELS.nome_do_orientador_da_tese }}:</strong> {{ doc.nome_do_orientador_da_tese.0|trim }}
+                                </div>
+                            {% endif %}
                         {% endif %}
+
                         {% if doc.data_de_inicio.0|trim == true %}
                             <div>
                                 <strong>{{ texts.PMM_LABELS.data_de_inicio }}:</strong> {{ doc.data_de_inicio.0|trim|date("d/m/Y") }}
