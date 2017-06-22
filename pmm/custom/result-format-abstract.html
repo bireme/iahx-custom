@@ -18,9 +18,9 @@
                     <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa }}:</strong> {{ doc.instituicao_sede_da_pesquisa.0|trim|split('|').1 }}
                 </div>
                 {% if doc.instituicao_sede_da_pesquisa.0|trim|split('|').0 == 'universitaria' %}
-                    {% if doc.instituicao_sede_da_pesquisa_universidade.0|trim == true %}
+                    {% if doc.sede_da_pesquisa.0|trim == true %}
                         <div>
-                            <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_universidade }}:</strong> {{ doc.instituicao_sede_da_pesquisa_universidade.0|trim }}
+                            <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_universidade }}:</strong> {{ doc.sede_da_pesquisa.0|trim }}
                         </div>
                     {% endif %}
                     {% if doc.instituicao_sede_da_pesquisa_faculdade.0|trim == true %}
@@ -101,9 +101,9 @@
                     <strong>{{ texts.PMM_LABELS.abrangencia }}:</strong> {{ doc.abrangencia.0|trim }}
                 </div>
             {% endif %}
-            {% if doc.regiao_onde_a_pesquisa_foi_realizada.0|trim == true %}
+            {% if doc.non_decs_region.0|trim == true %}
                 <div>
-                    <strong>{{ texts.PMM_LABELS.regiao_onde_a_pesquisa_foi_realizada }}:</strong> {{ doc.regiao_onde_a_pesquisa_foi_realizada.0|trim }}
+                    <strong>{{ texts.PMM_LABELS.regiao_onde_a_pesquisa_foi_realizada }}:</strong> {{ doc.non_decs_region.0|trim }}
                 </div>
             {% endif %}
             {% if doc.instituicao_sede_da_pesquisa_cidade.0|trim == true %}
@@ -124,14 +124,14 @@
 
             <!-- Campo: Tese -->
             {% if doc.forma_parte_de_alguma_tese.0|trim == 'Sim' %}
-                {% if doc.tese.0|trim == true %}
+                {% if doc.th_ti.0|trim == true %}
                     <div>
-                        <strong>{{ texts.PMM_LABELS.tese }}:</strong> {{ doc.tese.0|trim }}
+                        <strong>{{ texts.PMM_LABELS.tese }}:</strong> {{ doc.th_ti.0|trim }}
                     </div>
                 {% endif %}
-                {% if doc.nome_do_orientador_da_tese.0|trim == true %}
+                {% if doc.th_le.0|trim == true %}
                     <div>
-                        <strong>{{ texts.PMM_LABELS.nome_do_orientador_da_tese }}:</strong> {{ doc.nome_do_orientador_da_tese.0|trim }}
+                        <strong>{{ texts.PMM_LABELS.nome_do_orientador_da_tese }}:</strong> {{ doc.th_le.0|trim }}
                     </div>
                 {% endif %}
             {% endif %}
@@ -141,9 +141,9 @@
                     <strong>{{ texts.PMM_LABELS.data_de_inicio }}:</strong> {{ doc.data_de_inicio.0|trim|date("d/m/Y") }}
                 </div>
             {% endif %}
-            {% if doc.data_provavel_de_finalizacao.0|trim == true %}
+            {% if doc.dp.0|trim == true %}
                 <div>
-                    <strong>{{ texts.PMM_LABELS.data_provavel_de_finalizacao }}:</strong> {{ doc.data_provavel_de_finalizacao.0|trim|date("d/m/Y") }}
+                    <strong>{{ texts.PMM_LABELS.data_provavel_de_finalizacao }}:</strong> {{ doc.dp.0|trim|date("d/m/Y") }}
                 </div>
             {% endif %}
             {% if doc.data_de_finalizacao.0|trim == true %}
