@@ -126,6 +126,9 @@
 											{% if debug == 'true' %}<li>[ {{item.0}} ({{item.1}}) ] </li> {% endif %}
                                     {% elseif name == 'la' and not has_translation(item.0, cluster_labels) %}
 											{% if debug == 'true' %}<li>[ {{item.0}} ({{item.1}}) ] </li> {% endif %}
+
+				     {% elseif name == 'descritor_local_cluster' and not has_translation(item.0, cluster_labels) %} 
+											{% if debug == 'true' %}<li>[ {{item.0}} ({{item.1}}) ] </li> {% endif %}
                                     {% elseif name == 'limit' and not has_translation(item.0, cluster_labels) %}
                                             {% if debug == 'true' %}<li>[ {{item.0}} ({{item.1}}) ] </li> {% endif %}
 									{% elseif name == 'type' and not has_translation(item.0, cluster_labels) %}

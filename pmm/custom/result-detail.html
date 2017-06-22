@@ -98,9 +98,9 @@
                                 <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa }}:</strong> {{ doc.instituicao_sede_da_pesquisa.0|trim|split('|').1 }}
                             </div>
                             {% if doc.instituicao_sede_da_pesquisa.0|trim|split('|').0 == 'universitaria' %}
-                                {% if doc.sede_pesquisa.0|trim == true %}
+                                {% if doc.universidade_pesquisa.0|trim == true %}
                                     <div>
-                                        <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_universidade }}:</strong> {{ doc.sede_pesquisa.0|trim }}
+                                        <strong>{{ texts.PMM_LABELS.instituicao_sede_da_pesquisa_universidade }}:</strong> {{ doc.universidade_pesquisa.0|trim }}
                                     </div>
                                 {% endif %}
                                 {% if doc.instituicao_sede_da_pesquisa_faculdade.0|trim == true %}
@@ -115,9 +115,9 @@
                                 {% endif %}
                             {% endif %}
                             {% if doc.instituicao_sede_da_pesquisa.0|trim|split('|').0 == 'nao_universitaria' %}
-                                {% if doc.nome_da_instituicao_sede_da_pesquisa.0|trim == true %}
+                                {% if doc.sede_pesquisa.0|trim == true %}
                                     <div>
-                                        <strong>{{ texts.PMM_LABELS.nome_da_instituicao_sede_da_pesquisa }}:</strong> {{ doc.nome_da_instituicao_sede_da_pesquisa.0|trim }}
+                                        <strong>{{ texts.PMM_LABELS.nome_da_instituicao_sede_da_pesquisa }}:</strong> {{ doc.sede_pesquisa.0|trim }}
                                     </div>
                                 {% endif %}
                             {% endif %}
@@ -218,17 +218,17 @@
 
                         {% if doc.data_de_inicio.0|trim == true %}
                             <div>
-                                <strong>{{ texts.PMM_LABELS.data_de_inicio }}:</strong> {{ doc.data_de_inicio.0|trim|date("d/m/Y") }}
+                                <strong>{{ texts.PMM_LABELS.data_de_inicio }}:</strong> {{ doc.data_de_inicio.0|date("d/m/Y") }}
                             </div>
                         {% endif %}
                         {% if doc.dp.0|trim == true %}
                             <div>
-                                <strong>{{ texts.PMM_LABELS.data_provavel_de_finalizacao }}:</strong> {{ doc.dp.0|trim|date("d/m/Y") }}
+                                <strong>{{ texts.PMM_LABELS.data_provavel_de_finalizacao }}:</strong> {{ doc.dp.0|date("d/m/Y") }}
                             </div>
                         {% endif %}
                         {% if doc.data_de_finalizacao.0|trim == true %}
                             <div>
-                                <strong>{{ texts.PMM_LABELS.data_de_finalizacao }}:</strong> {{ doc.data_de_finalizacao.0|trim|date("d/m/Y") }}
+                                <strong>{{ texts.PMM_LABELS.data_de_finalizacao }}:</strong> {{ doc.data_de_finalizacao.0|date("d/m/Y") }}
                             </div>
                         {% endif %}
                         {% if doc.equipe_de_pesquisa.0|raw|trim == true %}
