@@ -1,10 +1,10 @@
 .clear {clear: both;}
-.advanced-form {width: 90%; margin: 0 auto; padding-bottom: 100px;}
+.advanced-form {width: 90%; margin: 0 auto; padding-bottom: 15px;}
 .advanced-form .buttons {margin: 20px 0;}
 .advanced-form .q-first input {width: 70%;}
 .advanced-form select {width: 17%; margin: 0 5px;}
 .advanced-form select.index {margin-left: 20px;}
-.advanced-form input, .advanced-form select, .advanced-form button{padding: 5px; margin: 5px 0;}
+.advanced-form input, .advanced-form select {padding: 5px; margin: 5px 0;}
 .advanced-form input { width: 63%;}
 
 .advanced-form .mini {width: 90px;}
@@ -26,4 +26,65 @@
 .advanced-form .q-first input {width: 65%;}
 .advanced-form .q {border: solid 1px #ccc;}
 .advanced-form .q:focus {border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+
+#advanced .middle DIV.boxContent {
+    clear: both;
+    width: 100%;
+	 height: 400px;
+}
+
+form#advanced{
+	margin-top: 22px;
+	font-size: 13px;
+	line-height: 25px;
+	}
+
+#advanced .advanced-form{
+	 margin-top: 10px;
+	 width: 100%;
+}
+
+.advanced-form .submit{
+	padding: 6px 20px 6px 20px;
+}
+
+.middle {
+    clear: both;
+    padding: 0.5%;
+}
+
+.middle .firstColumn {
+    float: left;
+    width: 31%;
+	height: 375px; 
+}
+
+.middle .secondColumn {
+    float: left;
+    margin-left: 2.3em;
+    width: 31%;
+	height: 375px; 
+}
+
+.middle .thirdColumn {
+    float: left;
+    width: 31%;
+    margin-left: 2.3em;
+		height: 375px; 
+}
+
+.box1, .box2, .box3{
+	 margin-bottom: 20px;
+	 margin-left:24px;
+	}
+
+input[type='checkbox']{
+	margin-right: 7px;
+ /* Double-sized Checkboxes */
+  -ms-transform: scale(1.3); /* IE */
+  -moz-transform: scale(1.3); /* FF */
+  -webkit-transform: scale(1.3); /* Safari and Chrome */
+  -o-transform: scale(1.3); /* Opera */
+  padding: 10px;	
+}
 
