@@ -181,9 +181,9 @@
                                 <strong>{{ texts.PMM_LABELS.abrangencia }}:</strong> {{ doc.abrangencia.0|trim }}
                             </div>
                         {% endif %}
-                        {% if doc.non_decs_region.0|trim == true %}
+                        {% if doc.regiao_onde_a_pesquisa_foi_realizada.0|trim == true %}
                             <div>
-                                <strong>{{ texts.PMM_LABELS.regiao_onde_a_pesquisa_foi_realizada }}:</strong> {{ doc.non_decs_region.0|trim }}
+                                <strong>{{ texts.PMM_LABELS.regiao_onde_a_pesquisa_foi_realizada }}:</strong> {{ doc.regiao_onde_a_pesquisa_foi_realizada.0|trim }}
                             </div>
                         {% endif %}
                         {% if doc.instituicao_sede_da_pesquisa_cidade.0|trim == true %}
